@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MBOX</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Montserrat',sans-serif;
+}
+
+body{
+    background:#020814;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:999;
+    background:rgba(1,8,20,.95);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(0,119,255,.15);
+}
+
+.container{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+}
+
+.nav{
+    height:85px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:42px;
+    font-weight:800;
+    color:#0b6cff;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:#fff;
+}
+
+.menu{
+    display:flex;
+    align-items:center;
+    gap:40px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#fff;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#0b6cff;
+}
+
+.btn-whatsapp{
+    background:#0b6cff;
+    color:#fff;
+    padding:14px 24px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s;
+    border:1px solid #1f7dff;
+}
+
+.btn-whatsapp:hover{
+    transform:translateY(-2px);
+    box-shadow:0 0 20px rgba(11,108,255,.5);
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    width:100%;
+    min-height:100vh;
+    padding-top:120px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle,#0b6cff30,transparent 70%);
+    top:-200px;
+    right:-150px;
+}
+
+.hero-content{
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:60px;
+}
+
+.hero-text h1{
+    font-size:58px;
+    line-height:1.2;
+    margin-bottom:25px;
+    font-weight:800;
+}
+
+.hero-text h1 span{
+    color:#0b6cff;
+}
+
+.hero-text p{
+    color:#cfd7e6;
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:35px;
+    max-width:650px;
+}
+
+.hero-image{
+    position:relative;
+}
+
+.hero-image img{
+    width:100%;
+    border-radius:24px;
+    border:1px solid rgba(0,119,255,.25);
+    box-shadow:0 0 40px rgba(0,119,255,.2);
+}
+
+/* ================= FEATURES ================= */
+
+.features{
+    padding:40px 0 70px;
+}
+
+.features-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.feature{
+    background:#051225;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:18px;
+    padding:30px;
+    text-align:center;
+    transition:.4s;
+}
+
+.feature:hover{
+    transform:translateY(-8px);
+    border-color:#0b6cff;
+    box-shadow:0 0 30px rgba(11,108,255,.2);
+}
+
+.feature i{
+    font-size:42px;
+    color:#0b6cff;
+    margin-bottom:18px;
+}
+
+.feature h3{
+    font-size:18px;
+    margin-bottom:10px;
+}
+
+.feature p{
+    color:#b7c1d1;
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* ================= CATALOGOS ================= */
+
+.catalogos{
+    padding:60px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:42px;
+    margin-bottom:12px;
+}
+
+.section-title p{
+    color:#b7c1d1;
+}
+
+.catalog-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.card{
+    background:#051225;
+    border-radius:22px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:#0b6cff;
+    box-shadow:0 0 35px rgba(11,108,255,.25);
+}
+
+.card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:25px;
+}
+
+.card-content h3{
+    color:#0b6cff;
+    font-size:24px;
+    margin-bottom:15px;
+}
+
+.card-content p{
+    color:#c9d3df;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+.card-content a{
+    display:inline-block;
+    background:#0b6cff;
+    padding:12px 22px;
+    border-radius:10px;
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+}
+
+/* ================= SOCIAL ================= */
+
+.social{
+    padding:80px 0;
+}
+
+.social-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.social-box{
+    background:#051225;
+    border-radius:24px;
+    padding:40px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.social-box h2{
+    font-size:34px;
+    margin-bottom:20px;
+}
+
+.social-box h2 span{
+    color:#0b6cff;
+}
+
+.social-box p{
+    color:#c4d0df;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.social-links{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.social-links a{
+    text-decoration:none;
+    color:#fff;
+    font-size:17px;
+    transition:.3s;
+}
+
+.social-links a:hover{
+    color:#0b6cff;
+}
+
+.whatsapp-box{
+    background:linear-gradient(135deg,#051225,#021427);
+    border:1px solid rgba(0,119,255,.2);
+    border-radius:20px;
+    padding:35px;
+}
+
+.whatsapp-box h3{
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.whatsapp-box span{
+    color:#0b6cff;
+}
+
+.whatsapp-number{
+    margin-top:25px;
+    background:#0b6cff;
+    padding:18px;
+    border-radius:14px;
+    display:inline-block;
+    font-size:28px;
+    font-weight:700;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:35px 0;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#b7c1d1;
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media(max-width:1100px){
+
+.hero-content{
+    grid-template-columns:1fr;
+}
+
+.hero-text{
+    text-align:center;
+}
+
+.hero-text p{
+    margin:auto;
+    margin-bottom:35px;
+}
+
+.features-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.catalog-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.social-grid{
+    grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:768px){
+
+.menu{
+    display:none;
+}
+
+.logo{
+    font-size:32px;
+}
+
+.hero{
+    padding-top:120px;
+}
+
+.hero-text h1{
+    font-size:40px;
+}
+
+.hero-text p{
+    font-size:16px;
+}
+
+.features-grid{
+    grid-template-columns:1fr;
+}
+
+.catalog-grid{
+    grid-template-columns:1fr;
+}
+
+.section-title h2{
+    font-size:34px;
+}
+
+.whatsapp-number{
+    font-size:22px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<div class="container nav">
+
+<div class="logo">
+M<span>BOX</span>
+</div>
+
+<div class="menu">
+<a href="#">INÍCIO</a>
+<a href="#">CATÁLOGOS</a>
+<a href="#">SOBRE NÓS</a>
+<a href="#">CONTATO</a>
+
+<a href="#" class="btn-whatsapp">
+FALAR VIA WHATSAPP
+</a>
+</div>
+
+</div>
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container hero-content">
+
+<div class="hero-text">
+
+<h1>
+SOLUÇÕES QUE <span>ORGANIZAM</span>,
+DETALHES QUE <span>TRANSFORMAM</span>.
+</h1>
+
+<p>
+A MBOX é referência em soluções de ferramentas
+que unem qualidade, tecnologia e desempenho.
+Oferecemos uma linha completa para profissionais
+e empresas que buscam eficiência, segurança e
+produtividade em cada projeto.
+</p>
+
+<a href="#" class="btn-whatsapp">
+FALAR VIA WHATSAPP
+</a>
+
+</div>
+
+<div class="hero-image">
+<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop" alt="">
+</div>
+
+</div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section class="features">
+
+<div class="container">
+
+<div class="features-grid">
+
+<div class="feature">
+<i>⚙</i>
+<h3>QUALIDADE PREMIUM</h3>
+<p>
+Ferramentas profissionais com alta durabilidade.
+</p>
+</div>
+
+<div class="feature">
+<i>🛡</i>
+<h3>DURABILIDADE E DESEMPENHO</h3>
+<p>
+Produtos resistentes para qualquer demanda.
+</p>
+</div>
+
+<div class="feature">
+<i>🤝</i>
+<h3>PARCERIA E CONFIANÇA</h3>
+<p>
+Compromisso com atendimento especializado.
+</p>
+</div>
+
+<div class="feature">
+<i>💡</i>
+<h3>INOVAÇÃO CONSTANTE</h3>
+<p>
+Tecnologia aplicada para máxima eficiência.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CATALOGOS -->
+
+<section class="catalogos">
+
+<div class="container">
+
+<div class="section-title">
+<h2>CATÁLOGOS</h2>
+<p>Soluções completas para cada necessidade.</p>
+</div>
+
+<div class="catalog-grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581147036324-c1c88943f2f4?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+<h3>FERRAMENTAS MANUAIS</h3>
+<p>
+Precisão e resistência para o trabalho do dia a dia.
+</p>
+
+<a href="#">VER CATÁLOGO →</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+<h3>FERRAMENTAS ELÉTRICAS</h3>
+<p>
+Potência e tecnologia para seus projetos.
+</p>
+
+<a href="#">VER CATÁLOGO →</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1613214150384-61c4f7b7e9d4?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+<h3>FERRAMENTAS DE CORTE</h3>
+<p>
+Cortes precisos e alto desempenho em qualquer material.
+</p>
+
+<a href="#">VER CATÁLOGO →</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+<h3>ACESSÓRIOS E CONSUMÍVEIS</h3>
+<p>
+Tudo o que você precisa para complementar seu trabalho.
+</p>
+
+<a href="#">VER CATÁLOGO →</a>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SOCIAL -->
+
+<section class="social">
+
+<div class="container">
+
+<div class="social-grid">
+
+<div class="social-box">
+
+<h2>
+SIGA A <span>MBOX</span>
+</h2>
+
+<p>
+Acompanhe nossas novidades, lançamentos e conteúdos exclusivos.
+</p>
+
+<div class="social-links">
+<a href="#">Instagram</a>
+<a href="#">Facebook</a>
+<a href="#">YouTube</a>
+<a href="#">LinkedIn</a>
+</div>
+
+</div>
+
+<div class="whatsapp-box">
+
+<h3>
+FALE CONOSCO VIA <span>WHATSAPP</span>
+</h3>
+
+<p>
+Atendimento rápido, prático e personalizado para você e sua empresa.
+</p>
+
+<div class="whatsapp-number">
+(11) 94545-4545
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<div class="container">
+MBOX - SOLUÇÕES QUE ORGANIZAM, DETALHES QUE TRANSFORMAM.
+</div>
+</footer>
+
+</body>
+</html>
