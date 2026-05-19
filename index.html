@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
 <title>MBOX</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,26 +18,28 @@
     font-family:'Montserrat',sans-serif;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     background:#020814;
     color:#fff;
     overflow-x:hidden;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
-/* ================= HEADER ================= */
+/* ========================== */
+/* HEADER */
+/* ========================== */
 
 header{
     width:100%;
     position:fixed;
     top:0;
     left:0;
-    z-index:999;
-    background:rgba(1,8,20,.95);
-    backdrop-filter:blur(10px);
+    z-index:9999;
+    background:rgba(1,8,20,.96);
+    backdrop-filter:blur(12px);
     border-bottom:1px solid rgba(0,119,255,.15);
 }
 
@@ -46,7 +49,7 @@ header{
     margin:auto;
 }
 
-.nav{
+.navbar{
     height:85px;
     display:flex;
     align-items:center;
@@ -54,9 +57,9 @@ header{
 }
 
 .logo{
+    color:#0b6cff;
     font-size:42px;
     font-weight:800;
-    color:#0b6cff;
     letter-spacing:2px;
 }
 
@@ -64,10 +67,12 @@ header{
     color:#fff;
 }
 
+/* MENU DESKTOP */
+
 .menu{
     display:flex;
     align-items:center;
-    gap:40px;
+    gap:35px;
 }
 
 .menu a{
@@ -84,30 +89,74 @@ header{
 
 .btn-whatsapp{
     background:#0b6cff;
-    color:#fff;
+    color:#fff !important;
     padding:14px 24px;
-    border-radius:10px;
+    border-radius:12px;
     text-decoration:none;
     font-weight:700;
     transition:.3s;
-    border:1px solid #1f7dff;
 }
 
 .btn-whatsapp:hover{
     transform:translateY(-2px);
-    box-shadow:0 0 20px rgba(11,108,255,.5);
+    box-shadow:0 0 25px rgba(11,108,255,.5);
 }
 
-/* ================= HERO ================= */
+/* MENU MOBILE */
+
+.mobile-btn{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    cursor:pointer;
+}
+
+.mobile-btn div{
+    width:28px;
+    height:3px;
+    background:#fff;
+    border-radius:10px;
+}
+
+.mobile-menu{
+    position:fixed;
+    top:85px;
+    left:-100%;
+    width:100%;
+    height:calc(100vh - 85px);
+    background:#020814;
+    transition:.4s;
+    padding:40px;
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+    z-index:999;
+}
+
+.mobile-menu.active{
+    left:0;
+}
+
+.mobile-menu a{
+    color:#fff;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:700;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    padding-bottom:15px;
+}
+
+/* ========================== */
+/* HERO */
+/* ========================== */
 
 .hero{
-    width:100%;
     min-height:100vh;
-    padding-top:120px;
     display:flex;
     align-items:center;
     position:relative;
     overflow:hidden;
+    padding-top:120px;
 }
 
 .hero::before{
@@ -115,21 +164,20 @@ header{
     position:absolute;
     width:700px;
     height:700px;
-    background:radial-gradient(circle,#0b6cff30,transparent 70%);
-    top:-200px;
-    right:-150px;
+    background:radial-gradient(circle,#0b6cff25,transparent 70%);
+    top:-250px;
+    right:-100px;
 }
 
 .hero-content{
-    width:100%;
     display:grid;
     grid-template-columns:1fr 1fr;
-    align-items:center;
     gap:60px;
+    align-items:center;
 }
 
 .hero-text h1{
-    font-size:58px;
+    font-size:60px;
     line-height:1.2;
     margin-bottom:25px;
     font-weight:800;
@@ -140,72 +188,71 @@ header{
 }
 
 .hero-text p{
-    color:#cfd7e6;
+    color:#c9d4e3;
     font-size:18px;
     line-height:1.8;
     margin-bottom:35px;
-    max-width:650px;
-}
-
-.hero-image{
-    position:relative;
 }
 
 .hero-image img{
     width:100%;
-    border-radius:24px;
-    border:1px solid rgba(0,119,255,.25);
-    box-shadow:0 0 40px rgba(0,119,255,.2);
+    border-radius:28px;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 0 40px rgba(11,108,255,.25);
 }
 
-/* ================= FEATURES ================= */
+/* ========================== */
+/* BENEFÍCIOS */
+/* ========================== */
 
-.features{
-    padding:40px 0 70px;
+.benefits{
+    padding:70px 0;
 }
 
-.features-grid{
+.benefits-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:25px;
 }
 
-.feature{
+.benefit{
     background:#051225;
+    padding:35px;
+    border-radius:20px;
     border:1px solid rgba(255,255,255,.06);
-    border-radius:18px;
-    padding:30px;
     text-align:center;
     transition:.4s;
 }
 
-.feature:hover{
-    transform:translateY(-8px);
+.benefit:hover{
+    transform:translateY(-10px);
     border-color:#0b6cff;
     box-shadow:0 0 30px rgba(11,108,255,.2);
 }
 
-.feature i{
+.benefit .icon{
     font-size:42px;
-    color:#0b6cff;
     margin-bottom:18px;
+    color:#0b6cff;
 }
 
-.feature h3{
+.benefit h3{
+    margin-bottom:12px;
     font-size:18px;
-    margin-bottom:10px;
 }
 
-.feature p{
-    color:#b7c1d1;
-    font-size:14px;
+.benefit p{
+    color:#c7d0de;
     line-height:1.6;
+    font-size:14px;
 }
 
-/* ================= CATALOGOS ================= */
+/* ========================== */
+/* CATÁLOGOS */
+/* ========================== */
 
 .catalogos{
-    padding:60px 0;
+    padding:80px 0;
 }
 
 .section-title{
@@ -214,12 +261,12 @@ header{
 }
 
 .section-title h2{
-    font-size:42px;
-    margin-bottom:12px;
+    font-size:44px;
+    margin-bottom:10px;
 }
 
 .section-title p{
-    color:#b7c1d1;
+    color:#b9c6d8;
 }
 
 .catalog-grid{
@@ -230,9 +277,9 @@ header{
 
 .card{
     background:#051225;
-    border-radius:22px;
+    border-radius:24px;
     overflow:hidden;
-    border:1px solid rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.06);
     transition:.4s;
 }
 
@@ -254,56 +301,58 @@ header{
 
 .card-content h3{
     color:#0b6cff;
-    font-size:24px;
     margin-bottom:15px;
+    font-size:24px;
 }
 
 .card-content p{
-    color:#c9d3df;
+    color:#c7d0de;
     line-height:1.7;
     margin-bottom:25px;
 }
 
 .card-content a{
-    display:inline-block;
     background:#0b6cff;
-    padding:12px 22px;
-    border-radius:10px;
     color:#fff;
+    padding:12px 20px;
+    border-radius:10px;
     text-decoration:none;
+    display:inline-block;
     font-weight:700;
 }
 
-/* ================= SOCIAL ================= */
+/* ========================== */
+/* CONTATO */
+/* ========================== */
 
-.social{
+.contato{
     padding:80px 0;
 }
 
-.social-grid{
+.contato-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:30px;
 }
 
-.social-box{
+.box{
     background:#051225;
     border-radius:24px;
     padding:40px;
-    border:1px solid rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.06);
 }
 
-.social-box h2{
-    font-size:34px;
+.box h2{
+    font-size:36px;
     margin-bottom:20px;
 }
 
-.social-box h2 span{
+.box h2 span{
     color:#0b6cff;
 }
 
-.social-box p{
-    color:#c4d0df;
+.box p{
+    color:#c8d2e1;
     line-height:1.8;
     margin-bottom:25px;
 }
@@ -315,9 +364,8 @@ header{
 }
 
 .social-links a{
-    text-decoration:none;
     color:#fff;
-    font-size:17px;
+    text-decoration:none;
     transition:.3s;
 }
 
@@ -325,24 +373,7 @@ header{
     color:#0b6cff;
 }
 
-.whatsapp-box{
-    background:linear-gradient(135deg,#051225,#021427);
-    border:1px solid rgba(0,119,255,.2);
-    border-radius:20px;
-    padding:35px;
-}
-
-.whatsapp-box h3{
-    font-size:30px;
-    margin-bottom:20px;
-}
-
-.whatsapp-box span{
-    color:#0b6cff;
-}
-
 .whatsapp-number{
-    margin-top:25px;
     background:#0b6cff;
     padding:18px;
     border-radius:14px;
@@ -351,16 +382,20 @@ header{
     font-weight:700;
 }
 
-/* ================= FOOTER ================= */
+/* ========================== */
+/* FOOTER */
+/* ========================== */
 
 footer{
-    padding:35px 0;
+    padding:30px 0;
     text-align:center;
     border-top:1px solid rgba(255,255,255,.08);
-    color:#b7c1d1;
+    color:#c8d2e1;
 }
 
-/* ================= RESPONSIVO ================= */
+/* ========================== */
+/* TABLET */
+/* ========================== */
 
 @media(max-width:1100px){
 
@@ -373,11 +408,12 @@ footer{
 }
 
 .hero-text p{
+    max-width:700px;
     margin:auto;
     margin-bottom:35px;
 }
 
-.features-grid{
+.benefits-grid{
     grid-template-columns:repeat(2,1fr);
 }
 
@@ -385,35 +421,47 @@ footer{
     grid-template-columns:repeat(2,1fr);
 }
 
-.social-grid{
+.contato-grid{
     grid-template-columns:1fr;
 }
-
-}
-
-@media(max-width:768px){
 
 .menu{
     display:none;
 }
+
+.mobile-btn{
+    display:flex;
+}
+
+}
+
+/* ========================== */
+/* CELULAR */
+/* ========================== */
+
+@media(max-width:768px){
 
 .logo{
     font-size:32px;
 }
 
 .hero{
-    padding-top:120px;
+    padding-top:130px;
 }
 
 .hero-text h1{
-    font-size:40px;
+    font-size:38px;
 }
 
 .hero-text p{
-    font-size:16px;
+    font-size:15px;
 }
 
-.features-grid{
+.section-title h2{
+    font-size:34px;
+}
+
+.benefits-grid{
     grid-template-columns:1fr;
 }
 
@@ -421,12 +469,16 @@ footer{
     grid-template-columns:1fr;
 }
 
-.section-title h2{
-    font-size:34px;
+.whatsapp-number{
+    font-size:20px;
 }
 
-.whatsapp-number{
-    font-size:22px;
+.card img{
+    height:220px;
+}
+
+.box{
+    padding:30px;
 }
 
 }
@@ -435,30 +487,59 @@ footer{
 </head>
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
-<div class="container nav">
+
+<div class="container navbar">
 
 <div class="logo">
 M<span>BOX</span>
 </div>
 
-<div class="menu">
-<a href="#">INÍCIO</a>
-<a href="#">CATÁLOGOS</a>
-<a href="#">SOBRE NÓS</a>
-<a href="#">CONTATO</a>
+<!-- MENU DESKTOP -->
+
+<nav class="menu">
+<a href="#inicio">INÍCIO</a>
+<a href="#catalogos">CATÁLOGOS</a>
+<a href="#beneficios">BENEFÍCIOS</a>
+<a href="#contato">CONTATO</a>
 
 <a href="#" class="btn-whatsapp">
 FALAR VIA WHATSAPP
 </a>
+</nav>
+
+<!-- BOTÃO MOBILE -->
+
+<div class="mobile-btn" id="mobileBtn">
+<div></div>
+<div></div>
+<div></div>
 </div>
 
 </div>
+
+<!-- MENU MOBILE -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+<a href="#inicio">INÍCIO</a>
+<a href="#catalogos">CATÁLOGOS</a>
+<a href="#beneficios">BENEFÍCIOS</a>
+<a href="#contato">CONTATO</a>
+
+<a href="#" class="btn-whatsapp">
+FALAR VIA WHATSAPP
+</a>
+
+</div>
+
 </header>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
-<section class="hero">
+<section class="hero" id="inicio">
 
 <div class="container hero-content">
 
@@ -473,8 +554,7 @@ DETALHES QUE <span>TRANSFORMAM</span>.
 A MBOX é referência em soluções de ferramentas
 que unem qualidade, tecnologia e desempenho.
 Oferecemos uma linha completa para profissionais
-e empresas que buscam eficiência, segurança e
-produtividade em cada projeto.
+e empresas que buscam eficiência, segurança e produtividade.
 </p>
 
 <a href="#" class="btn-whatsapp">
@@ -484,50 +564,50 @@ FALAR VIA WHATSAPP
 </div>
 
 <div class="hero-image">
-<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop" alt="">
+<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop">
 </div>
 
 </div>
 
 </section>
 
-<!-- FEATURES -->
+<!-- ================= BENEFÍCIOS ================= -->
 
-<section class="features">
+<section class="benefits" id="beneficios">
 
 <div class="container">
 
-<div class="features-grid">
+<div class="benefits-grid">
 
-<div class="feature">
-<i>⚙</i>
+<div class="benefit">
+<div class="icon">⚙</div>
 <h3>QUALIDADE PREMIUM</h3>
 <p>
-Ferramentas profissionais com alta durabilidade.
+Ferramentas profissionais com máxima resistência.
 </p>
 </div>
 
-<div class="feature">
-<i>🛡</i>
-<h3>DURABILIDADE E DESEMPENHO</h3>
+<div class="benefit">
+<div class="icon">🛡</div>
+<h3>DURABILIDADE</h3>
 <p>
-Produtos resistentes para qualquer demanda.
+Produtos desenvolvidos para alto desempenho.
 </p>
 </div>
 
-<div class="feature">
-<i>🤝</i>
-<h3>PARCERIA E CONFIANÇA</h3>
+<div class="benefit">
+<div class="icon">🤝</div>
+<h3>PARCERIA</h3>
 <p>
 Compromisso com atendimento especializado.
 </p>
 </div>
 
-<div class="feature">
-<i>💡</i>
-<h3>INOVAÇÃO CONSTANTE</h3>
+<div class="benefit">
+<div class="icon">💡</div>
+<h3>INOVAÇÃO</h3>
 <p>
-Tecnologia aplicada para máxima eficiência.
+Tecnologia aplicada para eficiência máxima.
 </p>
 </div>
 
@@ -537,9 +617,9 @@ Tecnologia aplicada para máxima eficiência.
 
 </section>
 
-<!-- CATALOGOS -->
+<!-- ================= CATÁLOGOS ================= -->
 
-<section class="catalogos">
+<section class="catalogos" id="catalogos">
 
 <div class="container">
 
@@ -551,54 +631,66 @@ Tecnologia aplicada para máxima eficiência.
 <div class="catalog-grid">
 
 <div class="card">
+
 <img src="https://images.unsplash.com/photo-1581147036324-c1c88943f2f4?q=80&w=1200&auto=format&fit=crop">
 
 <div class="card-content">
 <h3>FERRAMENTAS MANUAIS</h3>
+
 <p>
-Precisão e resistência para o trabalho do dia a dia.
+Precisão e resistência para trabalhos do dia a dia.
 </p>
 
 <a href="#">VER CATÁLOGO →</a>
+
 </div>
 </div>
 
 <div class="card">
+
 <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop">
 
 <div class="card-content">
 <h3>FERRAMENTAS ELÉTRICAS</h3>
+
 <p>
-Potência e tecnologia para seus projetos.
+Potência e tecnologia para profissionais.
 </p>
 
 <a href="#">VER CATÁLOGO →</a>
+
 </div>
 </div>
 
 <div class="card">
+
 <img src="https://images.unsplash.com/photo-1613214150384-61c4f7b7e9d4?q=80&w=1200&auto=format&fit=crop">
 
 <div class="card-content">
 <h3>FERRAMENTAS DE CORTE</h3>
+
 <p>
-Cortes precisos e alto desempenho em qualquer material.
+Alto desempenho e precisão em qualquer material.
 </p>
 
 <a href="#">VER CATÁLOGO →</a>
+
 </div>
 </div>
 
 <div class="card">
+
 <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200&auto=format&fit=crop">
 
 <div class="card-content">
-<h3>ACESSÓRIOS E CONSUMÍVEIS</h3>
+<h3>ACESSÓRIOS</h3>
+
 <p>
 Tudo o que você precisa para complementar seu trabalho.
 </p>
 
 <a href="#">VER CATÁLOGO →</a>
+
 </div>
 </div>
 
@@ -608,15 +700,13 @@ Tudo o que você precisa para complementar seu trabalho.
 
 </section>
 
-<!-- SOCIAL -->
+<!-- ================= CONTATO ================= -->
 
-<section class="social">
+<section class="contato" id="contato">
 
-<div class="container">
+<div class="container contato-grid">
 
-<div class="social-grid">
-
-<div class="social-box">
+<div class="box">
 
 <h2>
 SIGA A <span>MBOX</span>
@@ -635,14 +725,14 @@ Acompanhe nossas novidades, lançamentos e conteúdos exclusivos.
 
 </div>
 
-<div class="whatsapp-box">
+<div class="box">
 
-<h3>
-FALE CONOSCO VIA <span>WHATSAPP</span>
-</h3>
+<h2>
+FALE VIA <span>WHATSAPP</span>
+</h2>
 
 <p>
-Atendimento rápido, prático e personalizado para você e sua empresa.
+Atendimento rápido, prático e personalizado.
 </p>
 
 <div class="whatsapp-number">
@@ -653,15 +743,38 @@ Atendimento rápido, prático e personalizado para você e sua empresa.
 
 </div>
 
-</div>
-
 </section>
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 <div class="container">
 MBOX - SOLUÇÕES QUE ORGANIZAM, DETALHES QUE TRANSFORMAM.
 </div>
 </footer>
+
+<script>
+
+/* MENU MOBILE */
+
+const mobileBtn = document.getElementById('mobileBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+mobileBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+});
+
+/* FECHAR MENU AO CLICAR */
+
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+    });
+
+});
+
+</script>
 
 </body>
 </html>
